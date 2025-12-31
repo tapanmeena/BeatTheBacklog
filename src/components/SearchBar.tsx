@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { Search } from 'lucide-react';
 import './SearchBar.css';
 
 interface SearchBarProps {
@@ -27,7 +28,7 @@ export const SearchBar = ({ onSearch, placeholder = 'Search games...' }: SearchB
         className="search-input"
       />
       <button type="submit" className="search-button" disabled={!searchTerm.trim()}>
-        🔍
+        <Search size={20} />
       </button>
     </form>
   );

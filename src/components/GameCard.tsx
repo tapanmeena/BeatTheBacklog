@@ -1,3 +1,4 @@
+import { Star, Library, Gamepad2, CheckCircle, ImageOff } from 'lucide-react';
 import type { GameSearchResult, GameStatus, UserGame } from '../types/game';
 import { useCollection } from '../context/CollectionContext';
 import './GameCard.css';
@@ -9,12 +10,12 @@ interface GameCardProps {
   onClick?: () => void;
 }
 
-const statusLabels: Record<GameStatus, string> = {
-  backlog: '📚 Backlog',
-  playing: '🎮 Playing',
-  completed: '✅ Completed',
-  dropped: '❌ Dropped',
-  wishlist: '⭐ Wishlist'
+const statusLabels: Record<GameStatus, { icon: React.ReactNode; label: string }> = {
+  backlog: { icon: <Library size={12} />, label: 'Backlog' },
+  playing: { icon: <Gamepad2 size={12} />, label: 'Playing' },
+  completed: { icon: <CheckCircle size={12} />, label: 'Completed' },
+  dropped: { icon: <span>✕</span>, label: 'Dropped' },
+  wishlist: { icon: <Star size={12} />, label: 'Wishlist' }
 };
 
 export const GameCard = ({ game, onClick }: GameCardProps) => {
@@ -47,11 +48,12 @@ export const GameCard = ({ game, onClick }: GameCardProps) => {
         {game.imageUrl ? (
           <img src={game.imageUrl} alt={game.name} loading="lazy" />
         ) : (
-          <div className="game-card-placeholder">🎮</div>
+          <div className="game-card-placeholder"><ImageOff size={48} /></div>
         )}
         {currentStatus && (
           <span className={`game-status-badge ${currentStatus}`}>
-            {statusLabels[currentStatus]}
+            {statusLabels[currentStatus].icon}
+            <span>{statusLabels[currentStatus].label}</span>
           </span>
         )}
       </div>
@@ -86,28 +88,28 @@ export const GameCard = ({ game, onClick }: GameCardProps) => {
             onClick={(e) => handleStatusChange(e, 'wishlist')}
             title="Add to Wishlist"
           >
-            ⭐
+            <Star size={18} />
           </button>
           <button
             className={`action-btn backlog ${currentStatus === 'backlog' ? 'active' : ''}`}
             onClick={(e) => handleStatusChange(e, 'backlog')}
             title="Add to Backlog"
           >
-            📚
+            <Library size={18} />
           </button>
           <button
             className={`action-btn playing ${currentStatus === 'playing' ? 'active' : ''}`}
             onClick={(e) => handleStatusChange(e, 'playing')}
             title="Mark as Playing"
           >
-            🎮
+            <Gamepad2 size={18} />
           </button>
           <button
             className={`action-btn completed ${currentStatus === 'completed' ? 'active' : ''}`}
             onClick={(e) => handleStatusChange(e, 'completed')}
             title="Mark as Completed"
           >
-            ✅
+            <CheckCircle size={18} />
           </button>
         </div>
       </div>

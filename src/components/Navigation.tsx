@@ -1,3 +1,4 @@
+import { Home, Search, Library, BarChart3 } from 'lucide-react';
 import './Navigation.css';
 
 type Tab = 'home' | 'search' | 'collection' | 'stats';
@@ -8,11 +9,11 @@ interface NavigationProps {
 }
 
 export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
-  const tabs: { id: Tab; icon: string; label: string }[] = [
-    { id: 'home', icon: '🏠', label: 'Home' },
-    { id: 'search', icon: '🔍', label: 'Search' },
-    { id: 'collection', icon: '📚', label: 'Collection' },
-    { id: 'stats', icon: '📊', label: 'Stats' }
+  const tabs: { id: Tab; icon: React.ReactNode; label: string }[] = [
+    { id: 'home', icon: <Home size={20} />, label: 'Home' },
+    { id: 'search', icon: <Search size={20} />, label: 'Search' },
+    { id: 'collection', icon: <Library size={20} />, label: 'Collection' },
+    { id: 'stats', icon: <BarChart3 size={20} />, label: 'Stats' }
   ];
 
   return (

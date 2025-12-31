@@ -22,29 +22,29 @@ const getHeaders = () => ({
 
 // Mock data for testing when API is not accessible
 const mockGames = [
-  { id: 1, name: 'The Legend of Zelda: Breath of the Wild', imageUrl: '', gameplayMain: 50, gameplayMainExtra: 100, gameplayCompletionist: 189, similarity: 1, releaseYear: 2017 },
-  { id: 2, name: 'Elden Ring', imageUrl: '', gameplayMain: 55, gameplayMainExtra: 97, gameplayCompletionist: 133, similarity: 1, releaseYear: 2022 },
-  { id: 3, name: 'God of War Ragnarök', imageUrl: '', gameplayMain: 26, gameplayMainExtra: 51, gameplayCompletionist: 75, similarity: 1, releaseYear: 2022 },
-  { id: 4, name: 'Baldur\'s Gate 3', imageUrl: '', gameplayMain: 90, gameplayMainExtra: 120, gameplayCompletionist: 165, similarity: 1, releaseYear: 2023 },
-  { id: 5, name: 'Hollow Knight', imageUrl: '', gameplayMain: 26, gameplayMainExtra: 40, gameplayCompletionist: 65, similarity: 1, releaseYear: 2017 },
-  { id: 6, name: 'Red Dead Redemption 2', imageUrl: '', gameplayMain: 50, gameplayMainExtra: 80, gameplayCompletionist: 180, similarity: 1, releaseYear: 2018 },
-  { id: 7, name: 'The Witcher 3: Wild Hunt', imageUrl: '', gameplayMain: 51, gameplayMainExtra: 105, gameplayCompletionist: 173, similarity: 1, releaseYear: 2015 },
-  { id: 8, name: 'Hades', imageUrl: '', gameplayMain: 22, gameplayMainExtra: 45, gameplayCompletionist: 97, similarity: 1, releaseYear: 2020 },
-  { id: 9, name: 'Celeste', imageUrl: '', gameplayMain: 8, gameplayMainExtra: 15, gameplayCompletionist: 40, similarity: 1, releaseYear: 2018 },
-  { id: 10, name: 'Sekiro: Shadows Die Twice', imageUrl: '', gameplayMain: 30, gameplayMainExtra: 45, gameplayCompletionist: 70, similarity: 1, releaseYear: 2019 },
-  { id: 11, name: 'Cyberpunk 2077', imageUrl: '', gameplayMain: 25, gameplayMainExtra: 60, gameplayCompletionist: 103, similarity: 1, releaseYear: 2020 },
-  { id: 12, name: 'Horizon Forbidden West', imageUrl: '', gameplayMain: 30, gameplayMainExtra: 55, gameplayCompletionist: 85, similarity: 1, releaseYear: 2022 },
+  { id: 1, name: 'The Legend of Zelda: Breath of the Wild', imageUrl: 'https://howlongtobeat.com/games/38019_The_Legend_of_Zelda_Breath_of_the_Wild.jpg', gameplayMain: 50, gameplayMainExtra: 100, gameplayCompletionist: 189, similarity: 1, releaseYear: 2017 },
+  { id: 2, name: 'Elden Ring', imageUrl: 'https://howlongtobeat.com/games/68151_Elden_Ring.jpg', gameplayMain: 55, gameplayMainExtra: 97, gameplayCompletionist: 133, similarity: 1, releaseYear: 2022 },
+  { id: 3, name: 'God of War Ragnarök', imageUrl: 'https://howlongtobeat.com/games/83146_God_of_War_Ragnark.jpg', gameplayMain: 26, gameplayMainExtra: 51, gameplayCompletionist: 75, similarity: 1, releaseYear: 2022 },
+  { id: 4, name: 'Baldur\'s Gate 3', imageUrl: 'https://howlongtobeat.com/games/119286_Baldurs_Gate_3.jpg', gameplayMain: 90, gameplayMainExtra: 120, gameplayCompletionist: 165, similarity: 1, releaseYear: 2023 },
+  { id: 5, name: 'Hollow Knight', imageUrl: 'https://howlongtobeat.com/games/26286_Hollow_Knight.jpg', gameplayMain: 26, gameplayMainExtra: 40, gameplayCompletionist: 65, similarity: 1, releaseYear: 2017 },
+  { id: 6, name: 'Red Dead Redemption 2', imageUrl: 'https://howlongtobeat.com/games/27100_Red_Dead_Redemption_2.jpg', gameplayMain: 50, gameplayMainExtra: 80, gameplayCompletionist: 180, similarity: 1, releaseYear: 2018 },
+  { id: 7, name: 'The Witcher 3: Wild Hunt', imageUrl: 'https://howlongtobeat.com/games/10270_The_Witcher_3_Wild_Hunt.jpg', gameplayMain: 51, gameplayMainExtra: 105, gameplayCompletionist: 173, similarity: 1, releaseYear: 2015 },
+  { id: 8, name: 'Hades', imageUrl: 'https://howlongtobeat.com/games/62941_Hades.jpg', gameplayMain: 22, gameplayMainExtra: 45, gameplayCompletionist: 97, similarity: 1, releaseYear: 2020 },
+  { id: 9, name: 'Celeste', imageUrl: 'https://howlongtobeat.com/games/42818_Celeste.jpg', gameplayMain: 8, gameplayMainExtra: 15, gameplayCompletionist: 40, similarity: 1, releaseYear: 2018 },
+  { id: 10, name: 'Sekiro: Shadows Die Twice', imageUrl: 'https://howlongtobeat.com/games/56088_Sekiro_Shadows_Die_Twice.jpg', gameplayMain: 30, gameplayMainExtra: 45, gameplayCompletionist: 70, similarity: 1, releaseYear: 2019 },
+  { id: 11, name: 'Cyberpunk 2077', imageUrl: 'https://howlongtobeat.com/games/2127_Cyberpunk_2077.jpg', gameplayMain: 25, gameplayMainExtra: 60, gameplayCompletionist: 103, similarity: 1, releaseYear: 2020 },
+  { id: 12, name: 'Horizon Forbidden West', imageUrl: 'https://howlongtobeat.com/games/58590_Horizon_Forbidden_West.jpg', gameplayMain: 30, gameplayMainExtra: 55, gameplayCompletionist: 85, similarity: 1, releaseYear: 2022 },
 ];
 
 const mockRecentGames = [
-  { id: 101, name: 'The Legend of Zelda: Tears of the Kingdom', imageUrl: '', gameplayMain: 55, gameplayMainExtra: 100, gameplayCompletionist: 200, similarity: 1, releaseYear: 2023 },
-  { id: 102, name: 'Alan Wake 2', imageUrl: '', gameplayMain: 16, gameplayMainExtra: 24, gameplayCompletionist: 35, similarity: 1, releaseYear: 2023 },
-  { id: 103, name: 'Spider-Man 2', imageUrl: '', gameplayMain: 18, gameplayMainExtra: 30, gameplayCompletionist: 45, similarity: 1, releaseYear: 2023 },
-  { id: 104, name: 'Star Wars Jedi: Survivor', imageUrl: '', gameplayMain: 20, gameplayMainExtra: 35, gameplayCompletionist: 50, similarity: 1, releaseYear: 2023 },
-  { id: 105, name: 'Resident Evil 4 Remake', imageUrl: '', gameplayMain: 16, gameplayMainExtra: 25, gameplayCompletionist: 55, similarity: 1, releaseYear: 2023 },
-  { id: 106, name: 'Armored Core VI', imageUrl: '', gameplayMain: 22, gameplayMainExtra: 40, gameplayCompletionist: 60, similarity: 1, releaseYear: 2023 },
-  { id: 107, name: 'Final Fantasy XVI', imageUrl: '', gameplayMain: 35, gameplayMainExtra: 55, gameplayCompletionist: 85, similarity: 1, releaseYear: 2023 },
-  { id: 108, name: 'Lies of P', imageUrl: '', gameplayMain: 30, gameplayMainExtra: 40, gameplayCompletionist: 60, similarity: 1, releaseYear: 2023 },
+  { id: 101, name: 'The Legend of Zelda: Tears of the Kingdom', imageUrl: 'https://howlongtobeat.com/games/106389_The_Legend_of_Zelda_Tears_of_the_Kingdom.jpg', gameplayMain: 55, gameplayMainExtra: 100, gameplayCompletionist: 200, similarity: 1, releaseYear: 2023 },
+  { id: 102, name: 'Alan Wake 2', imageUrl: 'https://howlongtobeat.com/games/107686_Alan_Wake_2.jpg', gameplayMain: 16, gameplayMainExtra: 24, gameplayCompletionist: 35, similarity: 1, releaseYear: 2023 },
+  { id: 103, name: 'Spider-Man 2', imageUrl: 'https://howlongtobeat.com/games/107628_Marvels_Spider-Man_2.jpg', gameplayMain: 18, gameplayMainExtra: 30, gameplayCompletionist: 45, similarity: 1, releaseYear: 2023 },
+  { id: 104, name: 'Star Wars Jedi: Survivor', imageUrl: 'https://howlongtobeat.com/games/107055_Star_Wars_Jedi_Survivor.jpg', gameplayMain: 20, gameplayMainExtra: 35, gameplayCompletionist: 50, similarity: 1, releaseYear: 2023 },
+  { id: 105, name: 'Resident Evil 4 Remake', imageUrl: 'https://howlongtobeat.com/games/107631_Resident_Evil_4.jpg', gameplayMain: 16, gameplayMainExtra: 25, gameplayCompletionist: 55, similarity: 1, releaseYear: 2023 },
+  { id: 106, name: 'Armored Core VI', imageUrl: 'https://howlongtobeat.com/games/100127_Armored_Core_VI_Fires_of_Rubicon.jpg', gameplayMain: 22, gameplayMainExtra: 40, gameplayCompletionist: 60, similarity: 1, releaseYear: 2023 },
+  { id: 107, name: 'Final Fantasy XVI', imageUrl: 'https://howlongtobeat.com/games/68683_Final_Fantasy_XVI.jpg', gameplayMain: 35, gameplayMainExtra: 55, gameplayCompletionist: 85, similarity: 1, releaseYear: 2023 },
+  { id: 108, name: 'Lies of P', imageUrl: 'https://howlongtobeat.com/games/107631_Lies_of_P.jpg', gameplayMain: 30, gameplayMainExtra: 40, gameplayCompletionist: 60, similarity: 1, releaseYear: 2023 },
 ];
 
 // Helper function to search mock data

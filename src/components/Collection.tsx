@@ -1,16 +1,17 @@
 import { useState } from 'react';
+import { Gamepad2, Library, CheckCircle, Star, X, FolderOpen } from 'lucide-react';
 import { useCollection } from '../context/CollectionContext';
 import { GameCard } from './GameCard';
 import type { GameStatus } from '../types/game';
 import './Collection.css';
 
-const statusTabs: { id: GameStatus | 'all'; label: string; icon: string }[] = [
-  { id: 'all', label: 'All', icon: '📁' },
-  { id: 'playing', label: 'Playing', icon: '🎮' },
-  { id: 'backlog', label: 'Backlog', icon: '📚' },
-  { id: 'completed', label: 'Completed', icon: '✅' },
-  { id: 'wishlist', label: 'Wishlist', icon: '⭐' },
-  { id: 'dropped', label: 'Dropped', icon: '❌' }
+const statusTabs: { id: GameStatus | 'all'; label: string; icon: React.ReactNode }[] = [
+  { id: 'all', label: 'All', icon: <FolderOpen size={18} /> },
+  { id: 'playing', label: 'Playing', icon: <Gamepad2 size={18} /> },
+  { id: 'backlog', label: 'Backlog', icon: <Library size={18} /> },
+  { id: 'completed', label: 'Completed', icon: <CheckCircle size={18} /> },
+  { id: 'wishlist', label: 'Wishlist', icon: <Star size={18} /> },
+  { id: 'dropped', label: 'Dropped', icon: <X size={18} /> }
 ];
 
 export const Collection = () => {
@@ -60,7 +61,7 @@ export const Collection = () => {
         </div>
       ) : (
         <div className="empty-collection">
-          <span className="empty-icon">🎮</span>
+          <span className="empty-icon"><Gamepad2 size={64} /></span>
           <p>No games in this collection yet.</p>
           <p className="empty-hint">Search for games to add them to your collection!</p>
         </div>
