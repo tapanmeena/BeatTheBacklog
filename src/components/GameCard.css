@@ -1,0 +1,157 @@
+.game-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.game-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--secondary-bg);
+}
+
+.game-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--secondary-bg), var(--primary-bg));
+}
+
+.game-status-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.game-status-badge.backlog {
+  background: var(--backlog-color);
+}
+
+.game-status-badge.playing {
+  background: var(--playing-color);
+}
+
+.game-status-badge.completed {
+  background: var(--completed-color);
+}
+
+.game-status-badge.dropped {
+  background: var(--dropped-color);
+}
+
+.game-status-badge.wishlist {
+  background: var(--wishlist-color);
+}
+
+.game-card-content {
+  padding: 12px;
+}
+
+.game-card-title {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.game-card-year {
+  margin: 0 0 8px 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.game-card-times {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.time-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 50px;
+  padding: 6px;
+  background: var(--secondary-bg);
+  border-radius: 6px;
+}
+
+.time-label {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.time-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.game-card-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  background: var(--secondary-bg);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.action-btn.wishlist.active {
+  background: var(--wishlist-color);
+}
+
+.action-btn.backlog.active {
+  background: var(--backlog-color);
+}
+
+.action-btn.playing.active {
+  background: var(--playing-color);
+}
+
+.action-btn.completed.active {
+  background: var(--completed-color);
+}
