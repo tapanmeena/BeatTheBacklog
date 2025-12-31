@@ -2,27 +2,30 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .main-content {
   flex: 1;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
-  padding-bottom: 80px;
+  padding: 30px 24px;
+  padding-bottom: 100px;
   width: 100%;
   box-sizing: border-box;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .search-section {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   padding: 0 10px;
+  animation: fadeInUp 0.5s ease-out 0.1s both;
 }
 
 .desktop-nav {
   display: none;
-  padding: 16px 20px;
-  max-width: 1200px;
+  padding: 20px 24px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -42,33 +45,37 @@
   }
   
   .main-content {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 }
 
 .error-message {
   text-align: center;
-  padding: 40px 20px;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-radius: 12px;
-  margin: 20px 0;
+  padding: 48px 24px;
+  background: rgba(248, 113, 113, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 20px;
+  margin: 24px 0;
+  animation: scaleIn 0.4s ease-out;
 }
 
 .error-message p {
   margin: 0;
-  color: #ef4444;
+  color: #f87171;
+  font-weight: 500;
 }
 
 .error-hint {
-  margin-top: 12px !important;
+  margin-top: 16px !important;
   font-size: 0.9rem;
   color: var(--text-secondary) !important;
 }
 
 .error-hint code {
-  background: var(--secondary-bg);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-family: monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
 }
